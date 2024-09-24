@@ -1,6 +1,6 @@
 import { parse } from 'rss-to-json'
 
-export async function GET(request: Request, {params}) {
+export async function GET(request: Request, { params }: { params: { pod: string } }) {
   const { pod } = params
   const rss = await parse(`https://pods.media/api/rss/feed/channel/${pod}`)
 
